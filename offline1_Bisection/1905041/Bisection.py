@@ -29,7 +29,7 @@ def bisection(lower_bound, upper_bound, approx_error, max_iter):
 
         root = (lower_bound + upper_bound) / 2.0
         if(iter > 1):
-            error = (abs((root - prev_root))) / root         
+            error = abs((root - prev_root) / root) * 100     
 
         prev_root = root
 
@@ -55,7 +55,7 @@ def bisection_table(lower_bound, upper_bound, approx_error, max_iter):
 
         root = (lower_bound + upper_bound) / 2.0
         if(iter > 1):
-            error = (abs((root - prev_root))) / root         
+            error = abs((root - prev_root) / root) * 100
         prev_root = root
 
         if(iter <= 20):
@@ -71,7 +71,7 @@ def bisection_table(lower_bound, upper_bound, approx_error, max_iter):
     return root, error_table
 
 
-print("Value of x is(absolute relative approximation error < 0.5 ): ", bisection(0, 0.12, 0.5, 100))
+print("Value of x is(absolute relative approximation error < 0.5 ): ", bisection(0, 0.12, 0.5, 20))
 
-(root, table) = bisection_table(0, 0.12, 0.5, 100)
+(root, table) = bisection_table(0, 0.12, 0.5, 20)
 print(tabulate(table, headers=["Iteration","Absolute Relative Approximation Error"]))
