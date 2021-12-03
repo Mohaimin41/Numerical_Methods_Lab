@@ -71,7 +71,7 @@ def bisection_table(lower_bound, upper_bound, approx_error, max_iter):
     return root, error_table
 
 
-print("Value of x is(absolute relative approximation error < 0.5 ): ", bisection(0, 0.12, 0.5, 20))
+print("Value of x is(absolute relative approximation error < 0.5 ): ", bisection(0, 0.12, 0.5, 100))
 
 (root, table) = bisection_table(0, 0.12, 0.5, 20)
 print(tabulate(table, headers=["Iteration","Absolute Relative Approximation Error"]))
