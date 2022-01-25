@@ -31,7 +31,7 @@ def simpsons(start, end, intervals):
 
     ans = h * (func(start) + func(end))
 
-    for i in range(1, intervals):  # 1 to n-1
+    for i in range(1, intervals):  # 1 to 2n-1
 
         if (i % 2 == 1): # if i odd
             ans += h * 4 * func(start + i * h)
