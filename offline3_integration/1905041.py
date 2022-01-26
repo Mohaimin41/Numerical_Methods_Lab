@@ -87,17 +87,17 @@ print("\nResults and absolute relative approximate errors for n = 1 to 5\n")
 for i in range(5):
 
     if (i == 0):
-        results.append([i+1, simpsons(init_conc, init_conc/2.0, i + 1),
+        results.append([2, simpsons(init_conc, init_conc/2.0, i + 1),
                         ])
     else:
-        results.append([i+1, simpsons(init_conc, init_conc/2.0, i + 1),
+        results.append([2 * (i+1), simpsons(init_conc, init_conc/2.0, i + 1),
                         absRelApproxError(simpsons(init_conc, init_conc/2.0, i + 1),
                                           simpsons(init_conc, init_conc / 2.0, i))
                         ]
                        )
 
 print(tabulate(results,
-               headers=["n", "Result", "Absolute Relative Approximation Error"]))
+               headers=["Sub-intervals", "Result", "Absolute Relative Approximation Error"]))
 
 
 #                           PROBLEM 3
