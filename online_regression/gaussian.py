@@ -79,7 +79,7 @@ def GaussianElimination(mat_a, mat_b, pivot=True, showAll=True):
     numOfVar, numOfCol = mat_a.shape
     mat_res = np.zeros((numOfVar, 1))
 
-    mat_a, mat_b = ForwardElimination(mat_a, mat_b, numOfVar, True, False)
+    mat_a, mat_b = ForwardElimination(mat_a, mat_b, numOfVar, pivot, showAll)
 
     mat_res = BackSubstitution(mat_a, mat_b, mat_res, numOfVar)
 

@@ -68,7 +68,7 @@ def polynomial_reg(Xarr, Yarr, order):
 
     # fill up coefficient matrix
     # first row special case:
-    for row in range(1, order+1):
+    for row in range(order+1):
         for col in range(order+1):
             if (row == 0 and col == 0):
                 coefficient_mat[0][0] = total_points
@@ -83,4 +83,4 @@ def polynomial_reg(Xarr, Yarr, order):
     # print(coefficient_mat)
     # print(constant_mat)
     # print(np.sum(np.power(Xarr, 2*order, dtype=np.double)))
-    return gaussian.GaussianElimination(coefficient_mat, constant_mat, True, False)
+    return gaussian.GaussianElimination(coefficient_mat, constant_mat, pivot=True, showAll=False)
