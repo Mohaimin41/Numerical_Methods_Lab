@@ -78,7 +78,7 @@ def polynomial_reg(Xarr, Yarr, order):
 
     # fill up constant matrix
     for row in range(order+1):
-        constant_mat[row][0] = np.sum((Yarr * np.power(Xarr, row)))
+        constant_mat[row][0] = np.sum((Yarr * np.power(Xarr, row, dtype=np.double)))
 
     # print(coefficient_mat)
     # print(constant_mat)
